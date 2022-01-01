@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SuiteALL">
+    <!--<test name="test1" annotations="测试首页">
+        <parameter name="browserName" value="chrome"></parameter>
+        <classes>
+            <class name="com.cwb.testcase.TestCase1" />
+        </classes>
+    </test>
+    <test name="test2" annotations="测试产品列表">
+        <classes>
+            <class name="com.cwb.testcase.TestCase2" />
+        </classes>
+    </test>
+    <test name="test3" annotations="测试用户个人中心">
+        <classes>
+            <class name="com.cwb.testcase.TestCase3" />
+        </classes>
+    </test>
+    <test name="test4" annotations="测试注销用户">
+        <classes>
+            <class name="com.cwb.testcase.TestCase3" />
+        </classes>
+    </test>-->
+
+    <listeners>
+        <!--testng的XML配置文件中添加这些内容-->
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+
+    <suite-files>
+        <!--<suite-file path="testsuit1.xml"></suite-file>-->
+        <suite-file path="testsuit2.xml"></suite-file>
+    </suite-files>
+</suite>
