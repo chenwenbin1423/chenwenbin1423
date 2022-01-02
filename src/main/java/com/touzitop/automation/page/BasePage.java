@@ -1,6 +1,7 @@
 package com.touzitop.automation.page;
 
 import com.touzitop.automation.utils.WebDriverUtils;
+import com.touzitop.automation.utils.CommonMethods;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -22,8 +23,8 @@ public class BasePage {
     //private Logger logger = Logger.getLogger(WebDriverUtils.class);
 
     public void init() {
-        System.setProperty("webdriver.chrome.driver","target/drivers/chromedriver.exe");
-        System.setProperty("webdriver.chrome.bin","C:/'Program Files'/Google/Chrome/Application/chrome.exe");
+
+        setBrowserProperties();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -31,13 +32,23 @@ public class BasePage {
     }
 
     protected void init(String url) {
-        System.setProperty("webdriver.chrome.driver","target/drivers/chromedriver.exe");
-        System.setProperty("webdriver.chrome.bin","C:/'Program Files'/Google/Chrome/Application/chrome.exe");
+
+        setBrowserProperties();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         setPageUrl(url);
         driver.get(URL);
+    }
+
+    private void setBrowserProperties() {
+        if ("windows".contains(CommonMethods.isWindowsOrLinuxOS())) {
+            System.setProperty("webdriver.chrome.driver","target/drivers/chromedriver.exe");
+            System.setProperty("webdriver.chrome.bin","C:/'Program Files'/Google/Chrome/Application/chrome.exe");
+        } else if ("linux".contains(CommonMethods.isWindowsOrLinuxOS())) {
+            System.setProperty("webdriver.chrome.driver","target/drivers/chromedriver");
+            System.setProperty("webdriver.chrome.bin","/opt/google/chrome/chrome");
+        }
     }
 
     public String getPageUrl() {

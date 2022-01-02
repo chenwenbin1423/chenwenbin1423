@@ -291,4 +291,53 @@ public class CommonMethods {
         Thread.sleep(runTimeSpeed);
     }
 
+    public static boolean isWindows() throws Exception {
+        boolean flag = false;
+        if (System.getProperty("os.name").toLowerCase().contains("win")) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    public static boolean runningOnWindows() {
+        String system = System.getProperty("os.name");
+        if (system.indexOf("Windows") >= 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean isLinux() throws Exception {
+        boolean flag = false;
+        String system = System.getProperty("os.name");
+        if (system.toLowerCase().contains("linux")) {
+            flag = true;
+        } else if (system.toLowerCase().contains("win")) {
+            flag = false;
+        } else {
+            System.out.println("can not find system os type: [" + system + "].");
+        }
+        return flag;
+    }
+
+    public static String isWindowsOrLinuxOS() {
+        String system = System.getProperty("os.name");
+        if (system.toLowerCase().contains("linux")) {
+            system = "linux";
+        } else if (system.toLowerCase().contains("win")) {
+            system = "windows";
+        } else {
+            System.out.println("can not find system os type: [" + system + "], pls check it!");
+        }
+        System.out.println("script is running on os [" + system + "].");
+        return system;
+    }
+
+    public static void main(String[] args) throws Exception {
+
+        System.out.println(isWindows() + " , code is running on windows, isWindows()");;
+        System.out.println(runningOnWindows() + " , code is running on windows, runningOnWindows()");
+        System.out.println(isWindowsOrLinuxOS() + " , code is running on windows, isWindowsOrLinuxOS()");
+    }
 }
