@@ -17,13 +17,15 @@ public class TestCase2 {
 
         HomePage homePage = new HomePage();
         Thread.sleep(2000);
-        homePage.gotoLoginPage();
-        Thread.sleep(2000);
-        LoginPage loginPage = new LoginPage();
-        loginPage.switchToAccountLogin();
-        loginPage.loginInAccount();
+        //homePage.gotoLoginPage();
+        //Thread.sleep(2000);
+        //LoginPage loginPage = new LoginPage();
+        //loginPage.switchToAccountLogin();
+        //loginPage.loginInAccount();
 
-        loginPage.quit();
+        //loginPage.quit();
+
+        homePage.quit();
 
     }
 
