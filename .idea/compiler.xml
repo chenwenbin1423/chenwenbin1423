@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="touzitop-auto-test" target="16" />
+      <module name="touzitop-auto-test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

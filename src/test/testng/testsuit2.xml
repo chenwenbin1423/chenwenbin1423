@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Suite2">
-    <!--<test name="testcase1" annotations="测试首页">
+    <test name="testcase1" annotations="测试首页">
         <parameter name="browserName" value="chrome"/>
         <classes>
             <class name="com.touzitop.test.testcases.TestCase1" />
+            <class name="com.touzitop.test.testcases.TestCase2" />
         </classes>
-    </test>-->
-    <test name="testcase2" annotations="测试产品列表">
+
+    </test>
+    <!--<test name="testcase2" annotations="测试产品列表">
         <classes>
             <class name="com.touzitop.test.testcases.TestCase2" />
         </classes>
-    </test>
+    </test>-->
     <!--<test name="testcase3" annotations="测试用户个人中心">
         <classes>
             <class name="com.touzitop.test.testcases.TestCase3" />

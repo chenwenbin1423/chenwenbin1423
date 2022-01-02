@@ -28,7 +28,9 @@ public class GetTVLinks extends BasePage {
     //创建构造函数，并且调用PageFactory.initElements()方法来初始化元素，即，将元素映射到我们定义好的变量
     public GetTVLinks() throws InterruptedException {
 
-        super.init();
+        //super.init();
+        super.init(url);
+
         //super.getURL(url);
         Thread.sleep(2000);
         //if (waitElementVisible(By.xpath("//strong/font[contains(text(),'【下载地址】')]")).isDisplayed()){
