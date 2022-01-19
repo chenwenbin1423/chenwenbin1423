@@ -330,7 +330,6 @@ public class CommonMethods {
         } else {
             System.out.println("can not find system os type: [" + system + "], pls check it!");
         }
-        System.out.println("script is running on os [" + system + "].");
         return system;
     }
 

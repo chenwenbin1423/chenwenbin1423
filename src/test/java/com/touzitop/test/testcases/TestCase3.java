@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class TestCase3 {
 
-    @Test
+    @Test(description = "获取下载连接")
     public void test_01_login() throws InterruptedException, IOException {
         /*LoginPage loginPage = new LoginPage();
         loginPage.login();

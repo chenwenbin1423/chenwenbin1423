@@ -43,11 +43,23 @@ public class BasePage {
 
     private void setBrowserProperties() {
         if ("windows".contains(CommonMethods.isWindowsOrLinuxOS())) {
+
             System.setProperty("webdriver.chrome.driver","target/drivers/chromedriver.exe");
             System.setProperty("webdriver.chrome.bin","C:/'Program Files'/Google/Chrome/Application/chrome.exe");
+            System.out.println("script is running on os Windows - " +
+                    System.getProperty("os.name") + " " +
+                    System.getProperty("os.arch") + " " +
+                    System.getProperty("os.version")
+            );
         } else if ("linux".contains(CommonMethods.isWindowsOrLinuxOS())) {
+
             System.setProperty("webdriver.chrome.driver","target/drivers/chromedriver");
             System.setProperty("webdriver.chrome.bin","/opt/google/chrome/chrome");
+            System.out.println("script is running on os Windows - " +
+                    System.getProperty("os.name") + " " +
+                    System.getProperty("os.arch") + " " +
+                    System.getProperty("os.version")
+            );
         }
     }
 
